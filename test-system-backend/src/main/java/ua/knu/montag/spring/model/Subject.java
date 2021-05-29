@@ -18,5 +18,5 @@ public class Subject {
     private Long id;
     private String name;
     @OneToMany(mappedBy = "subject",cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Test>tests = new ArrayList<>();
+    private List<Test> tests = new ArrayList<>();
 }

@@ -23,6 +23,7 @@ public class Member {
     private String email;
     private String password;
     private String role;
+    private String token;
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Result> results = new ArrayList<>();
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)

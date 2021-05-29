@@ -9,6 +9,7 @@ ua\knu\montag\spring\service\interfaces\MemberService.class
 ua\knu\montag\spring\controllers\exceptions\ServerException.class
 ua\knu\montag\spring\dao\implementations\MemberDAOImpl.class
 ua\knu\montag\spring\config\AppConfig.class
+ua\knu\montag\spring\controllers\util\StringResponse.class
 ua\knu\montag\spring\dao\interfaces\MemberDAO.class
 ua\knu\montag\spring\config\MySpringMVCDispatcherServletInitializer.class
 ua\knu\montag\spring\controllers\jwt\JWTConverter.class
