@@ -4,10 +4,13 @@ import { RegistrationComponent } from './pages/registration/registration.compone
 import {AuthorizationService} from './service/authorization.service';
 import {FormsModule} from '@angular/forms';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './pages/login/login.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
-    RegistrationComponent
+    RegistrationComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -15,11 +18,13 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     HttpClientModule
   ],
   exports: [
-    RegistrationComponent
+    RegistrationComponent,
+    LoginComponent
   ],
   providers: [
     AuthorizationService,
-    HttpClient
+    HttpClient,
+    RouterModule
   ]
 })
 export class AuthorizationModule { }

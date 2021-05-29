@@ -36,6 +36,12 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     @Transactional
+    public Member getMemberByEmailAndPassword(String email, String password) {
+        return dao.getByEmailAndPassword(email, password);
+    }
+
+    @Override
+    @Transactional
     public void update(long id, Member member) {
         dao.update(id, member);
     }

@@ -27,4 +27,17 @@ public class AuthorizationController {
         }
         else return null;
     }
+
+    @PostMapping(value = "/login", consumes = "application/json", produces = "application/json")
+    public Member login(@RequestBody Member member){
+        Member registered =
+                this.service.getMemberByEmailAndPassword(member.getEmail(), member.getPassword());
+
+        if(registered!=null){
+            String token = JWTConverter.createJWT(member.getEmail(), member.getRole());
+            member.setToken(token);
+            return member;
+        }
+        else return null;
+    }
 }

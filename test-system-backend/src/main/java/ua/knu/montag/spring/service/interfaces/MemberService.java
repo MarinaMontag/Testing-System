@@ -10,6 +10,7 @@ public interface MemberService {
     long save(Member member);
     Member getMemberById(long id);
     Member getMemberByEmail(String email);
+    Member getMemberByEmailAndPassword(String email, String password);
     void update(long id, Member member);
     void delete(long id);
     List<Result> getMemberResults(long id);

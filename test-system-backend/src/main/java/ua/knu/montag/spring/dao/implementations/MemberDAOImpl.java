@@ -3,6 +3,7 @@ package ua.knu.montag.spring.dao.implementations;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 import ua.knu.montag.spring.dao.interfaces.MemberDAO;
 import ua.knu.montag.spring.model.Member;
@@ -35,6 +36,16 @@ public class MemberDAOImpl implements MemberDAO {
         return session.byNaturalId(Member.class)
                 .using("email", email)
                 .load();
+    }
+
+    @Override
+    public Member getByEmailAndPassword(String email, String password) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("select m from Member m where m.email like :email " +
+                "and m.password like :password");
+        query.setParameter("email", email);
+        query.setParameter("password", password);
+        return (Member)query.uniqueResult();
     }
 
     @Override

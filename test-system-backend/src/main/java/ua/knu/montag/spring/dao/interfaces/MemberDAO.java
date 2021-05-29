@@ -10,6 +10,7 @@ public interface MemberDAO {
     long save(Member member);
     Member getById(long id);
     Member getByEmail(String email);
+    Member getByEmailAndPassword(String email, String password);
     void update(long id, Member member);
     void delete(long id);
     List<Result> getResults(long id);
