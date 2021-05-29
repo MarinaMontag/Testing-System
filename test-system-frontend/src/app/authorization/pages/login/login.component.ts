@@ -11,7 +11,8 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginUserData = new Member();
-  constructor(private auth: AuthorizationService) { }
+  constructor(private auth: AuthorizationService,
+              private router: Router) { }
   ngOnInit(): void {
   }
 

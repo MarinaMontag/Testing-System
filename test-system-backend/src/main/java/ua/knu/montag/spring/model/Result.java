@@ -13,7 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class Result {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date date;
     private Integer mark;

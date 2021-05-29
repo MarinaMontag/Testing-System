@@ -15,7 +15,7 @@ import java.util.List;
 @EqualsAndHashCode
 public class Member {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String surname;
